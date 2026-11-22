@@ -1,0 +1,6 @@
+{
+  "name": "CapCut Studio",
+  "description": "Editor de video multipista en el navegador con línea de tiempo, efectos en tiempo real, texto, transiciones, filtros y exportación.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

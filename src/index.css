@@ -1,0 +1,99 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  :root {
+    --cc-bg-root: #0e0e10;
+    --cc-bg-panel: #18181b;
+    --cc-bg-surface: #202024;
+    --cc-bg-hover: #2a2a30;
+    --cc-border: #2a2a30;
+    --cc-accent: #00d5dc;
+    --cc-accent-hover: #00bcc3;
+    --cc-text-primary: #ececf0;
+    --cc-text-muted: #8b8b96;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  html,
+  body,
+  #root {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Plus Jakarta Sans', 'DM Sans', system-ui, -apple-system, sans-serif;
+    background-color: var(--cc-bg-root);
+    color: var(--cc-text-primary);
+  }
+}
+
+.font-timecode {
+  font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, monospace;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Subtle KlipFrame dark scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #32323a;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #474752;
+}
+
+/* Range input styling for KlipFrame inspector & timeline zoom */
+input[type='range'].cc-slider {
+  -webkit-appearance: none;
+  appearance: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+input[type='range'].cc-slider::-webkit-slider-runnable-track {
+  height: 3px;
+  border-radius: 9999px;
+  background: #34343c;
+}
+
+input[type='range'].cc-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  margin-top: -5px;
+  width: 13px;
+  height: 13px;
+  border-radius: 9999px;
+  background: #ffffff;
+  border: 2px solid #00d5dc;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+  transition: transform 0.12s ease;
+}
+
+input[type='range'].cc-slider::-webkit-slider-thumb:hover {
+  transform: scale(1.15);
+}
+
+.clip-playhead {
+  clip-path: polygon(0% 0%, 100% 0%, 100% 62%, 50% 100%, 0% 62%);
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
